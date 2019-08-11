@@ -36,7 +36,7 @@ const server = http.createServer((req, res) => {
     buffer += decoder.end();
 
     // Choose the handler this request goes to
-    const chosenHandler = typeof router[trimmedPath] !== 'undefined' ? router[trimmedPath] : handlers.notFound;
+    let chosenHandler = typeof router[trimmedPath] !== 'undefined' ? router[trimmedPath] : handlers.notFound;
 
     // Construct the data object
     let data = {
@@ -48,7 +48,7 @@ const server = http.createServer((req, res) => {
     };
 
     // Route the request to the handler
-    chosenHandler(data, function(statusCode, payload) {
+    chosenHandler(data, (statusCode, payload) => {
       // status code called back by handler
       statusCode = typeof statusCode == 'number' ? statusCode : 200;
 
@@ -61,10 +61,10 @@ const server = http.createServer((req, res) => {
       // Return the response
       res.writeHead(statusCode);
       res.end(payloadString);
-    });
 
-    // Log the request path
-    console.log(`Returning this response: `, statusCode, payloadString);
+      // Log the request path
+      console.log(`Returning this response: `, statusCode, payloadString);
+    });
   });
 });
 
@@ -77,13 +77,13 @@ server.listen(8080, () => {
 const handlers = {};
 
 // Sample handler
-handlers.sample = function(data, callback) {
+handlers.sample = (data, callback) => {
   // callback a http status code, and a payload object
   callback(406, { name: 'sample handler' });
 };
 
 // Not found handler
-handlers.notFound = function(data, callback) {
+handlers.notFound = (data, callback) => {
   callback(404);
 };
 
