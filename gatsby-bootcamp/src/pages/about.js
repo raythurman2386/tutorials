@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 const AboutPage = () => {
   return (
@@ -11,6 +12,10 @@ const AboutPage = () => {
         discharged. Now I am a very ambitious trainee ready for the next big
         career change to come my way. Some of the current technologies I use
         include: HTML5, CSS3, LESS, JavaScript, React, and Python.
+      </p>
+      <p>
+        Contact me if you would like to chat about some work!
+        <Link to="/contact">Contact</Link>
       </p>
     </div>
   )
