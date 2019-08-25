@@ -2,11 +2,13 @@ import React from "react"
 import { Link } from "gatsby"
 
 // Components
+import Header from "../components/Header"
 import Footer from "../components/Footer"
 
 const BlogPage = () => {
   return (
     <div>
+      <Header />
       <h1>My Blog</h1>
       <p>Posts will show here later on!!</p>
       <p>
