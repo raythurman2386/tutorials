@@ -2,13 +2,11 @@ import React from "react"
 import { Link } from "gatsby"
 
 // Components
-import Header from "../components/Header"
-import Footer from "../components/Footer"
+import Layout from "../components/Layout"
 
 const AboutPage = () => {
   return (
-    <div>
-      <Header />
+    <Layout>
       <h1>Hello there!</h1>
       <p>
         Hi, my name is Raymond Thurman. I am a Full Stack Web Developer. Before
@@ -27,8 +25,7 @@ const AboutPage = () => {
           Home
         </Link>
       </p>
-      <Footer />
-    </div>
+    </Layout>
   )
 }
 

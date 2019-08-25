@@ -2,13 +2,11 @@ import React from "react"
 import { Link } from "gatsby"
 
 // Components
-import Header from "../components/Header"
-import Footer from "../components/Footer"
+import Layout from "../components/Layout"
 
 const HomePage = () => {
   return (
-    <div>
-      <Header />
+    <Layout>
       <h1>Hello</h1>
       <h2>I'm Ray, a full stack developer living in Indiana.</h2>
       <p>
@@ -20,8 +18,7 @@ const HomePage = () => {
       <p>
         Check out my <Link to="/blog"> Blog</Link>
       </p>
-      <Footer />
-    </div>
+    </Layout>
   )
 }
 
