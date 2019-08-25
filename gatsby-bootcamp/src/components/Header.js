@@ -3,10 +3,10 @@ import { Link } from "gatsby"
 
 const Header = () => {
   return (
-    <header style={flexStyles}>
+    <header>
       <h1>Raymond's Portfolio</h1>
       <nav>
-        <ul style={flexStyles}>
+        <ul>
           <li>
             <Link exact to="/">
               Home
@@ -25,13 +25,6 @@ const Header = () => {
       </nav>
     </header>
   )
-}
-
-const flexStyles = {
-  display: "flex",
-  "justify-content": "space-between",
-  "align-items": "center",
-  "list-style": "none",
 }
 
 export default Header
